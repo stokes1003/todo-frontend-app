@@ -6,6 +6,7 @@ import { TaskCard } from "./components/TaskCard";
 import { useTaskContext } from "./context/TaskContext";
 import { Header } from "./components/Header";
 import { GoPlusCircle } from "react-icons/go";
+import { PiClipboardText } from "react-icons/pi";
 
 export default function Home() {
   const router = useRouter();
@@ -80,23 +81,12 @@ export default function Home() {
           </div>
 
           {totalTasks === 0 ? (
-            <div className="text-center py-16">
-              <div className="w-20 h-20 mx-auto mb-6 text-gray-500">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  className="w-full h-full"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"
-                  />
-                </svg>
+            <div className="text-center flex flex-col gap-4">
+              <div className="w-20 h-20 mx-auto  text-gray-500">
+                <PiClipboardText size={56} style={{ color: "#808080" }} />
               </div>
-              <h3 className="text-lg font-medium text-gray-400 mb-2">
+
+              <h3 className="text-lg font-medium text-gray-400 ">
                 You don&apos;t have any tasks registered yet.
               </h3>
               <p className="text-gray-500">

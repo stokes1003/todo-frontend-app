@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { TaskCard } from "./components/TaskCard";
 import { useTaskContext } from "./context/TaskContext";
 import { Header } from "./components/Header";
+import { GoPlusCircle } from "react-icons/go";
 
 export default function Home() {
   const router = useRouter();
@@ -43,20 +44,10 @@ export default function Home() {
                 background: "linear-gradient(to right, #1E6F9F, #2B8FD1)",
               }}
             >
-              <span>Create Task</span>
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 4v16m8-8H4"
-                />
-              </svg>
+              <span className="text-sm font-bold text-gray-100">
+                Create Task
+              </span>
+              <GoPlusCircle size={20} style={{ color: "#F2F2F2" }} />
             </button>
           </div>
         </div>

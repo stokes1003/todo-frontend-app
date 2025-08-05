@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { TaskColor } from "../types/task";
 import { useTaskContext } from "../context/TaskContext";
+import { IoArrowBackOutline } from "react-icons/io5";
+import { GoPlusCircle } from "react-icons/go";
+import { FaCheck } from "react-icons/fa";
 
 interface TaskFormProps {
   taskId?: string;
@@ -87,22 +90,9 @@ export const TaskForm = ({ taskId, isEdit = false }: TaskFormProps) => {
 
   return (
     <div className="w-full flex flex-col gap-14">
-      {/* Back Button */}
       <div className="flex justify-start">
         <button onClick={handleBack} className="text-white h-3.5 w-3.5">
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
+          <IoArrowBackOutline size={24} style={{ color: "#FFFFFF" }} />
         </button>
       </div>
 
@@ -163,33 +153,9 @@ export const TaskForm = ({ taskId, isEdit = false }: TaskFormProps) => {
             {isSubmitting ? "Saving..." : title.trim() ? "Save" : "Add Task"}
           </span>
           {title.trim() ? (
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M5 13l4 4L19 7"
-              />
-            </svg>
+            <FaCheck size={16} style={{ color: "#F2F2F2" }} />
           ) : (
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M12 4v16m8-8H4"
-              />
-            </svg>
+            <GoPlusCircle size={20} style={{ color: "#F2F2F2" }} />
           )}
         </button>
       </form>

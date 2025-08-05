@@ -80,7 +80,6 @@ export const TaskProvider: React.FC<{ children: ReactNode }> = ({
     loading: true,
   });
 
-  // Load tasks from API on mount
   useEffect(() => {
     const loadTasks = async () => {
       try {

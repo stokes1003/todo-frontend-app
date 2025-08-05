@@ -1,17 +1,16 @@
 "use client";
 
 import React from "react";
+import { useParams } from "next/navigation";
 import { TaskForm } from "../../components/TaskForm";
 import { Header } from "../../components/Header";
 
-interface EditTaskPageProps {
-  params: {
-    id: string;
-  };
-}
+export default function EditTask() {
+  const params = useParams();
+  const taskId = params.id as string;
 
-export default function EditTask({ params }: EditTaskPageProps) {
-  console.log("EditTask render:", { params });
+  console.log("EditTask render:", { taskId });
+
   return (
     <main
       className="min-h-screen text-white"
@@ -20,7 +19,7 @@ export default function EditTask({ params }: EditTaskPageProps) {
       <div className="mx-auto w-full flex flex-col items-center gap-6">
         <Header />
         <div style={{ width: "736px" }}>
-          <TaskForm taskId={params.id} isEdit={true} />
+          <TaskForm taskId={taskId} isEdit={true} />
         </div>
       </div>
     </main>
